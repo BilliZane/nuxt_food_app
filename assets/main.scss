@@ -1,3 +1,5 @@
+@import './reset.scss';
+
 body,
 button,
 input,
@@ -74,11 +76,7 @@ button {
 
 button:hover {
   background: #63b6b8;
-}
-
-button:focus {
-  outline: 1px solid #fff;
-  outline-offset: -4px;
+  outline: none;
 }
 
 .ghost {
@@ -303,6 +301,10 @@ table th {
   .filter {
     padding-right: 200px;
   }
+}
+
+h4 {
+  padding-bottom: 8px;
 }
 
 // restaurant info

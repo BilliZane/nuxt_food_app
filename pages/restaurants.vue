@@ -1,17 +1,18 @@
 <template>
-  <main class="container">
-    <AppHeader />
+  <main class="mcontainer restaurant">
+    <div class="restaurantheading">
+      <h1>Restaurants</h1>
+    </div>
+
     <AppRestaurantInfo />
   </main>
 </template>
 
 <script>
-import AppHeader from '@/components/AppHeader.vue'
 import AppRestaurantInfo from '@/components/AppRestaurantInfo.vue'
 
 export default {
   components: {
-    AppHeader,
     AppRestaurantInfo
   }
 }

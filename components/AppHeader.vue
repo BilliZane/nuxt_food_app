@@ -5,10 +5,6 @@
   </section>
 </template>
 
-<script>
-export default {}
-</script>
-
 <style lang="scss" scoped>
 .header {
   width: 100%;
@@ -33,28 +29,6 @@ export default {}
     line-height: 1;
     text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.8);
     margin-bottom: 40px;
-  }
-
-  &__btn {
-    background: #098191;
-    transition: background ease 0.25s;
-    border-radius: 5px;
-    display: inline-block;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    margin: 0;
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 1.2rem;
-    cursor: pointer;
-    text-align: center;
-  }
-  &__btn:hover {
-    background: #63b6b8;
-  }
-  &__btn:focus {
-    outline: 1px solid #fff;
-    outline-offset: -4px;
   }
 }
 </style>
