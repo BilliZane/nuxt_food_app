@@ -12,6 +12,12 @@
 import AppRestaurantInfo from '@/components/AppRestaurantInfo.vue'
 
 export default {
+  head () {
+    return {
+      title: 'Restaurants'
+    }
+  },
+
   components: {
     AppRestaurantInfo
   }
