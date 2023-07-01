@@ -1,7 +1,9 @@
 <template>
   <section class="header" role="img" aria-label="Image Description">
     <h1 class="header__title">Nuxt Food App</h1>
-    <button class="header__btn">See restaurants</button>
+    <nuxt-link to="/restaurants">
+      <button class="header__btn">See restaurants</button>
+    </nuxt-link>
   </section>
 </template>
 

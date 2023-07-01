@@ -1,8 +1,8 @@
 <template>
-  <main class="container cart">
-    <h2>Cart</h2>
+  <main class="cart container">
+    <h2>Your Cart</h2>
 
-    <section>
+    <section v-if="cart.length">
       <table>
         <thead>
           <tr>
@@ -13,36 +13,47 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr v-for="item in cart" :key="item.id">
             <td>
-              <span></span>
+              {{ item.item }}
+              <span v-if="item.options">- {{ item.options }}</span>
             </td>
             <td>
-              <span class="comma"></span>
+              <span v-for="addon in item.addOns" :key="addon" class="comma">{{
+                addon
+              }}</span>
             </td>
-            <td></td>
-            <td></td>
+            <td>{{ item.count }}</td>
+            <td>{{ item.combinedPrice }}</td>
           </tr>
           <tr>
             <td colspan="3"></td>
-            <td class="total">Total: 14</td>
+            <td class="total">Total: ${{ totalPrice.toFixed(2) }}</td>
           </tr>
         </tbody>
       </table>
     </section>
+
+    <AppEmptyCart v-else />
   </main>
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import AppEmptyCart from "@/components/AppEmptyCart.vue";
 
 export default {
-  name: 'cartPage',
-
+  components: {
+    AppEmptyCart
+  },
   computed: {
-    ...mapState(['cart'])
+    cart() {
+      return this.$store.state.cart;
+    },
+    totalPrice() {
+      return this.$store.getters.totalPrice;
+    }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped></style>

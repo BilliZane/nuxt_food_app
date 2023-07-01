@@ -1,7 +1,7 @@
 <template>
   <main class="container">
     <AppHeader />
-    <AppRestaurantInfo :dataSource="fooddata"/>
+    <AppRestaurantInfo :dataSource="fooddata" />
   </main>
 </template>
 
@@ -11,6 +11,8 @@ import AppRestaurantInfo from '@/components/AppRestaurantInfo.vue'
 import { mapState } from 'vuex'
 
 export default {
+  name: 'index',
+
   head () {
     return {
       title: 'Home'

@@ -162,11 +162,18 @@ export const mutations = {
   }
 }
 
-// export const getters = {
-//   getterValue: state => {
-//     return state.value
-//   }
-// }
+export const getters = {
+  cartCount: state => {
+    if (!state.cart.length) return 0
+    return state.cart.reduce((acc, next) => acc + +next.count, 0)
+  },
+
+  totalPrice: state => {
+    if (!state.cart.length) return 0
+    return state.cart
+      .reduce((acc, next) => acc + +next.combinedPrice, 0)
+  }
+}
 
 // export const actions = {
 //   updateActionValue({ commit }) {
